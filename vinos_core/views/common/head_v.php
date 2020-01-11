@@ -1,74 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>后台管理系统</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="/assets/css/datepicker.css" />
-<link rel="stylesheet" href="/assets/css/matrix-style.css" />
-<link rel="stylesheet" href="/assets/css/matrix-media.css" />
-<link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.css" />
-<link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8" />
+  <title>Vinosinfo</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" type="text/css" href="/assets/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/styles/skitter.styles.css" media="all" />
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700,400' rel='stylesheet' type='text/css' />
+  <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
+
 <body>
-
-<!--Header-part-->
-<div id="header">
-  <h1><a href="#">考勤管理系统</a></h1>
-</div>
-<!--close-Header-part--> 
-
-<!--top-Header-menu-->
-<div id="user-nav" class="navbar navbar-inverse">
-  <ul class="nav">
-    <li class=""><a title="" href="#"><i class="icon icon-user"></i>  <span class="text"><?=$user['username']?>(<?=$user['role_name']?>)</span></a></li>
-    <li class=""><a title="" href="/auth/logout"><i class="icon icon-share-alt"></i><span class="text">退出登录</span></a></li>
-  </ul>
-</div>
-
-
-<!--sidebar-menu-->
-
-<div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-th"></i>Tables</a>
-  <ul>
-    <?php foreach ($menus as $menu):?>
-    <?php if(isset($menu['child'])):?>
-    <li class="submenu <?=$menu['id']==$current_menu['parent_id']?' open':''?>">
-      <a href="javascript:(void)">
-        <i class="icon icon-th-list"></i>
-        <span><?=$menu['name']?></span>
-        <i class="icon icon-chevron-<?=$menu['id']==$current_menu['parent_id']?'down':'left'?>" style='float: right;'></i>
-      </a>
-      <ul>
-        <?php foreach ($menu['child'] as $submenu):?>
-        <li <?=$submenu['id']==$current_menu['id']?'class="active"':''?>>
-          <a href="<?=$submenu['dir']==''?'':'/'.$submenu['dir']?><?=$submenu['controller']==''?'':'/'.$submenu['controller']?><?=$submenu['method']==''?'':'/'.$submenu['method']?>">
-            <i class="icon icon-bookmark"></i>
-            <span><?=$submenu['name']?></span>
-          </a> 
-        </li>
-        <?php endforeach;?>
-      </ul>
-    </li>
-    <?php else:?>
-    <li <?=$menu['id']==$current_menu['id']?'class="active"':''?>>
-      <a href="<?=$menu['dir']==''?'':'/'.$menu['dir']?><?=$menu['controller']==''?'':'/'.$menu['controller']?><?=$menu['method']==''?'':'/'.$menu['method']?>">
-        <i class="icon icon-th-list"></i>
-        <span><?=$menu['name']?></span>
-      </a>
-    </li>
-    <?php endif;?> 
-    <?php endforeach;?>
-  </ul>
-</div>
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb">
-      <?php if($current_menu['parent_id'] != 0):?>
-      <a href="javascript:(void)" title="<?=$menus[$current_menu['parent_id']]['name']?>" class="tip-bottom"><i class="icon-home"></i><?=$menus[$current_menu['parent_id']]['name']?></a> 
-      <?php endif;?>
-      <a href="javascript:(void)" class="current"><?=$current_menu['name']?></a> 
+<div id="bodychild">
+  <div id="outercontainer">      
+    <!-- HEADER -->
+    <div id="outerheader">
+        <header>
+          <section id="top">
+                <div id="logo">
+                    <a href="index.html"><img src="/assets/images/logo.png" alt="" /></a>
+                </div>
+                <ul id="sn">
+                    <li><a href="#"><span style="text-decoration:none;font-weight:normal;text-transform:uppercase;color:#999;font-weight: 400; font-family: 'Open Sans', sans-serif;">中文</span></a></li>
+                    <li><a><span style="text-decoration:none;font-weight:normal;text-transform:uppercase;color:#000;font-weight: 400; font-family: 'Open Sans', sans-serif;">Español</span></a></li>
+                </ul>      
+            </section>
+            <section id="navigation">
+                <nav>
+                    <ul id="topnav" class="sf-menu">
+                        <li><a href="index.html" class="current">INICIO</a></li>
+                        <li><a href="bodegas.html">BODEGAS</a></li>
+                        <li><a href="vinos.html">VINOS</a></li>
+                        <li><a href="nosotros.html">NOSOTROS</a></li>
+                        <li><a href="servicios.html">SERVICIOS</a></li>
+                        <li><a href="contact.html">CONTACTO</a></li>
+                    </ul><!-- topnav -->
+                </nav><!-- nav -->
+            </section>                                
+            <div class="clear"></div>
+        </header>
     </div>
-  </div>
+    <!-- END HEADER -->

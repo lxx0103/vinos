@@ -1,12 +1,90 @@
-<!--Footer-part-->
-<div class="row-fluid">
-  <div id="footer" class="span12"> 2017 &copy; 潮尊珠宝</div>
-</div>
-<!--end-Footer-part-->
-<script src="/assets/js/jquery.min.js"></script> 
-<script src="/assets/js/jquery.ui.custom.js"></script> 
-<script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/bootstrap-datepicker.js"></script>
-<script src="/assets/js/layer/layer.js"></script> 
-<script src="/assets/js/matrix.js"></script> 
-<script src="/assets/js/bootstrap-datetimepicker.js"></script> 
+		<!-- FOOTER SIDEBAR -->
+        <div id="outerfootersidebar">
+        	<div id="footersidebarcontainer">
+            	<footer id="footersidebar">
+                
+            	<div id="footcol1" class="footcol">
+                    <ul>
+                        <li class="widget-container">
+                            <h2 class="widget-title"><a href="./servicios.html">NUESTROS SERVICIOS</a></h2>
+                            <ul>
+                                <li>Web en Chino</li>
+                                <li>Mantenimiento Web</li>
+                                <li>Actualización Web</li>
+                                <li>Resumen de mes visitants</li>
+                                <li>Compartimento de contactos</li>
+                                <li>Interpretación en tiempo real</li>
+                                <li>Traducción de publicaciones</li>
+                                <li>Asistencia de exportación</li>
+                                <li>Consultoría legal de exportación</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            	<div id="footcol2" class="footcol" style="width: 240px;">
+                	<ul>
+                        <li class="widget-container">
+                            <h2 class="widget-title">&nbsp;</h2>
+                            <ul>
+                                <li>Envío de muestras de vino</li>
+                                <li>Informes del mercado Chino</li>
+                                <li>Visita a compradores en China</li>
+                                <li>Intermediación en negocio</li>
+                                <li>Servicio de venta y post-venta</li>
+                                <li>Servicio en ferias/exposiciones</li>
+                                <li>Recepción de clientes chinos en España</li>
+                                <li>Representación en actividades en China</li>
+                                <li>Actividades de promoción en ciudades China</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="footcol3" class="footcol" style="margin-left: -35px;">
+                    <ul>
+                        <li class="widget-container">
+                            <h2 class="widget-title">&nbsp;</h2>
+                            <div id="flickr">
+                                <div class="flickr-img"><img src="images/content/g5.png" alt="" /></div>
+                                <div class="flickr-img last"><img src="images/content/g6.png" alt="" /></div>
+                                <div class="flickr-img"><img src="images/content/g7.png" alt="" /></div>
+                                <div class="flickr-img last"><img src="images/content/g8.png" alt="" /></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            	<div id="footcol4" class="footcol">
+                	<ul>
+                    	<li class="widget-container">
+                        	<h2 class="widget-title"><a href="./contact.html">CONTACTO</a></h2>
+                            <ul>
+                                <li style="width: 210px;">Venid a conocernos. Somos la puerta de entrada al mercado chino, el mayor mercado del mundo, con 1.400 millones de potenciales consumidores.</li>
+                                <li>Para obtener más información, póngase en contacto con nosotros.</li>
+                                <li>info@vinosinfo.com <br/>+34 677 61 44 17 <br/>+34 910 41 51 98</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                </footer>
+            </div>
+        </div>
+        <!-- END FOOTER SIDEBAR -->
+               
+        <!-- FOOTER -->
+        <div id="outerfooter">
+        	<div id="footercontainer">
+            	<footer id="footer">
+                <ul id="footer-menu">
+                	<li><a href="./index.html">INICIO</a></li>   
+                    <!-- <li><a href="./bodegas.html">BODEGAS</a></li>   
+                    <li><a href="./vinos.html">VINOS</a></li>    -->
+                    <li><a href="./legal.html">AVISO LEGAL</a></li>   
+                    <li><a href="./nosotros.html">NOSOTROS</a></li>   
+                    <li><a href="./servicios.html">SERVICIOS</a></li>   
+                    <li><a href="./contact.html">CONTACTO</a></li>
+                </ul>
+                <div id="copyright">VinosInfo - Tu brújula en el mercado chino</div>
+                </footer>
+            </div>
+        </div>
+        <!-- END FOOTER -->
