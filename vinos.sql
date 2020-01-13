@@ -11,6 +11,26 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+
+-- 导出 vinosinfo 的数据库结构
+CREATE DATABASE IF NOT EXISTS `vinosinfo` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `vinosinfo`;
+
+-- 导出  表 vinosinfo.f_bodega 结构
+CREATE TABLE IF NOT EXISTS `f_bodega` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `zone_id` tinyint(4) NOT NULL DEFAULT '0',
+  `img` varchar(255) NOT NULL DEFAULT '',
+  `url` varchar(255) NOT NULL DEFAULT '',
+  `desc` varchar(48) NOT NULL DEFAULT '',
+  `is_show` tinyint(4) NOT NULL DEFAULT '0',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='前端酒庄';
+
 -- 正在导出表  vinosinfo.f_bodega 的数据：~12 rows (大约)
 /*!40000 ALTER TABLE `f_bodega` DISABLE KEYS */;
 INSERT INTO `f_bodega` (`id`, `zone_id`, `img`, `url`, `desc`, `is_show`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -28,12 +48,40 @@ INSERT INTO `f_bodega` (`id`, `zone_id`, `img`, `url`, `desc`, `is_show`, `creat
 	(12, 1, '/assets/images/content/bodega12.jpg', 'www.baidu.com', 'TU BODEGA', 1, '2020-01-13 13:50:50', 'Lewis', '2020-01-13 14:06:22', 'Lewis');
 /*!40000 ALTER TABLE `f_bodega` ENABLE KEYS */;
 
+-- 导出  表 vinosinfo.f_contact 结构
+CREATE TABLE IF NOT EXISTS `f_contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(48) NOT NULL DEFAULT '' COMMENT '姓名',
+  `phone` varchar(24) NOT NULL DEFAULT '' COMMENT '电话号码',
+  `email` varchar(48) NOT NULL DEFAULT '' COMMENT 'email',
+  `message` text NOT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='联系表';
+
 -- 正在导出表  vinosinfo.f_contact 的数据：~2 rows (大约)
 /*!40000 ALTER TABLE `f_contact` DISABLE KEYS */;
 INSERT INTO `f_contact` (`id`, `name`, `phone`, `email`, `message`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
 	(1, 'a', '', 'lxx0103@yahoo.com', '', '2020-01-14 01:43:31', 'Lewis', '2020-01-14 01:43:31', 'Lewis'),
 	(2, '123412341234', '1234', 'lxx0103@yahoo.com', '1234', '2020-01-14 01:46:10', 'Lewis', '2020-01-14 01:46:10', 'Lewis');
 /*!40000 ALTER TABLE `f_contact` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.f_menu 结构
+CREATE TABLE IF NOT EXISTS `f_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(24) NOT NULL DEFAULT '',
+  `is_show_top` tinyint(4) NOT NULL DEFAULT '0',
+  `is_show_bottom` tinyint(4) NOT NULL DEFAULT '0',
+  `controller` varchar(24) NOT NULL DEFAULT '' COMMENT '对应控制器',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='前端菜单';
 
 -- 正在导出表  vinosinfo.f_menu 的数据：~7 rows (大约)
 /*!40000 ALTER TABLE `f_menu` DISABLE KEYS */;
@@ -46,6 +94,21 @@ INSERT INTO `f_menu` (`id`, `name`, `is_show_top`, `is_show_bottom`, `controller
 	(6, 'SERVICIOS', 1, 1, 'servicios', '2020-01-11 20:24:04', 'Lewis', '2020-01-13 12:35:29', 'Lewis'),
 	(7, 'CONTACTO', 1, 1, 'contacto', '2020-01-11 20:24:25', 'Lewis', '2020-01-13 12:35:34', 'Lewis');
 /*!40000 ALTER TABLE `f_menu` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.f_slide 结构
+CREATE TABLE IF NOT EXISTS `f_slide` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` tinyint(4) NOT NULL DEFAULT '0',
+  `img` varchar(255) NOT NULL DEFAULT '',
+  `url` varchar(255) NOT NULL DEFAULT '',
+  `desc` varchar(48) NOT NULL DEFAULT '',
+  `is_show` tinyint(4) NOT NULL DEFAULT '0',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='前端轮播';
 
 -- 正在导出表  vinosinfo.f_slide 的数据：~24 rows (大约)
 /*!40000 ALTER TABLE `f_slide` DISABLE KEYS */;
@@ -76,6 +139,19 @@ INSERT INTO `f_slide` (`id`, `type`, `img`, `url`, `desc`, `is_show`, `create_ti
 	(24, 6, '/assets/images/content/slide1.jpg', '', 'Tu vino', 0, '2020-01-11 20:34:52', 'Lewis', '2020-01-14 02:04:31', 'Lewis');
 /*!40000 ALTER TABLE `f_slide` ENABLE KEYS */;
 
+-- 导出  表 vinosinfo.f_type 结构
+CREATE TABLE IF NOT EXISTS `f_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL DEFAULT '',
+  `is_show` tinyint(4) NOT NULL DEFAULT '0',
+  `row` tinyint(4) NOT NULL DEFAULT '0' COMMENT '第几行',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='红酒类型';
+
 -- 正在导出表  vinosinfo.f_type 的数据：~20 rows (大约)
 /*!40000 ALTER TABLE `f_type` DISABLE KEYS */;
 INSERT INTO `f_type` (`id`, `name`, `is_show`, `row`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -101,6 +177,21 @@ INSERT INTO `f_type` (`id`, `name`, `is_show`, `row`, `create_time`, `create_use
 	(20, 'Cava Gran Reserva', 1, 4, '2020-01-14 00:10:03', 'Lewis', '2020-01-14 00:11:42', 'Lewis');
 /*!40000 ALTER TABLE `f_type` ENABLE KEYS */;
 
+-- 导出  表 vinosinfo.f_vino 结构
+CREATE TABLE IF NOT EXISTS `f_vino` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_id` tinyint(4) NOT NULL DEFAULT '0',
+  `img` varchar(255) NOT NULL DEFAULT '',
+  `url` varchar(255) NOT NULL DEFAULT '',
+  `desc` varchar(48) NOT NULL DEFAULT '',
+  `is_show` tinyint(4) NOT NULL DEFAULT '0',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='红酒';
+
 -- 正在导出表  vinosinfo.f_vino 的数据：~12 rows (大约)
 /*!40000 ALTER TABLE `f_vino` DISABLE KEYS */;
 INSERT INTO `f_vino` (`id`, `type_id`, `img`, `url`, `desc`, `is_show`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -117,6 +208,19 @@ INSERT INTO `f_vino` (`id`, `type_id`, `img`, `url`, `desc`, `is_show`, `create_
 	(11, 1, '/assets/images/content/vino.jpg', 'www.google.com', 'TU VINO', 1, '2020-01-14 00:16:14', 'Lewis', '2020-01-14 00:16:53', 'Lewis'),
 	(12, 1, '/assets/images/content/vino.jpg', 'www.google.com', 'TU VINO', 1, '2020-01-14 00:16:14', 'Lewis', '2020-01-14 00:16:53', 'Lewis');
 /*!40000 ALTER TABLE `f_vino` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.f_zone 结构
+CREATE TABLE IF NOT EXISTS `f_zone` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL DEFAULT '',
+  `is_show` tinyint(4) NOT NULL DEFAULT '0',
+  `row` tinyint(4) NOT NULL DEFAULT '0' COMMENT '第几行',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='酒庄地区';
 
 -- 正在导出表  vinosinfo.f_zone 的数据：~20 rows (大约)
 /*!40000 ALTER TABLE `f_zone` DISABLE KEYS */;
@@ -143,19 +247,84 @@ INSERT INTO `f_zone` (`id`, `name`, `is_show`, `row`, `create_time`, `create_use
 	(20, 'Cádiz', 1, 2, '2020-01-13 13:21:06', 'Lewis', '2020-01-13 13:21:24', 'Lewis');
 /*!40000 ALTER TABLE `f_zone` ENABLE KEYS */;
 
--- 正在导出表  vinosinfo.s_department 的数据：~0 rows (大约)
+-- 导出  表 vinosinfo.s_department 结构
+CREATE TABLE IF NOT EXISTS `s_department` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `dept_name` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '部门名称',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='部门表';
+
+-- 正在导出表  vinosinfo.s_department 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `s_department` DISABLE KEYS */;
 INSERT INTO `s_department` (`id`, `dept_name`, `is_enable`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
 	(1, '1', 1, '2017-11-22 16:18:49', 'LIUXU', '2017-11-22 16:18:49', 'LIUXU');
 /*!40000 ALTER TABLE `s_department` ENABLE KEYS */;
 
+-- 导出  表 vinosinfo.s_dept_sche 结构
+CREATE TABLE IF NOT EXISTS `s_dept_sche` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `dept_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '部门ID',
+  `sche_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '班次ID',
+  `start_date` date NOT NULL DEFAULT '2000-01-01' COMMENT '开始日期',
+  `end_date` date NOT NULL DEFAULT '2000-01-01' COMMENT '结束日期',
+  `start_time` time NOT NULL DEFAULT '00:00:00' COMMENT '上班时间',
+  `end_time` time NOT NULL DEFAULT '00:00:00' COMMENT '下班时间',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='部门班次表';
+
 -- 正在导出表  vinosinfo.s_dept_sche 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `s_dept_sche` DISABLE KEYS */;
 /*!40000 ALTER TABLE `s_dept_sche` ENABLE KEYS */;
 
+-- 导出  表 vinosinfo.s_holiday 结构
+CREATE TABLE IF NOT EXISTS `s_holiday` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `dept_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `staff_code` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `target` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '目标：1部门2员工3全公司',
+  `type` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '类型：1:放假，2:事假，3:病假，4:其他',
+  `holiday` date NOT NULL DEFAULT '2000-01-01' COMMENT '假期时间',
+  `hours` decimal(10,1) unsigned NOT NULL DEFAULT '0.0',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='假期表';
+
 -- 正在导出表  vinosinfo.s_holiday 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `s_holiday` DISABLE KEYS */;
 /*!40000 ALTER TABLE `s_holiday` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.s_menu 结构
+CREATE TABLE IF NOT EXISTS `s_menu` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '菜单名称',
+  `dir` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '菜单目录',
+  `controller` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '菜单控制器',
+  `method` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '菜单方法',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '父级菜单id',
+  `need_privilege` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '是否需要权限',
+  `is_hidden` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否显示在菜单',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`),
+  KEY `is_enable` (`is_enable`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='菜单表';
 
 -- 正在导出表  vinosinfo.s_menu 的数据：~39 rows (大约)
 /*!40000 ALTER TABLE `s_menu` DISABLE KEYS */;
@@ -201,17 +370,67 @@ INSERT INTO `s_menu` (`id`, `name`, `dir`, `controller`, `method`, `is_enable`, 
 	(42, '改为昨日下班卡', 'checkin', 'attendence', 'setcheckdate', 1, 34, 1, 1, '2017-11-22 17:02:11', 'LIUXU', '2017-11-22 17:02:11', 'LIUXU');
 /*!40000 ALTER TABLE `s_menu` ENABLE KEYS */;
 
--- 正在导出表  vinosinfo.s_position 的数据：~0 rows (大约)
+-- 导出  表 vinosinfo.s_position 结构
+CREATE TABLE IF NOT EXISTS `s_position` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `position_name` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '职务名称',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='职务表';
+
+-- 正在导出表  vinosinfo.s_position 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `s_position` DISABLE KEYS */;
 INSERT INTO `s_position` (`id`, `position_name`, `is_enable`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
 	(1, '1', 1, '2017-11-22 16:18:55', 'LIUXU', '2017-11-22 16:18:55', 'LIUXU');
 /*!40000 ALTER TABLE `s_position` ENABLE KEYS */;
 
--- 正在导出表  vinosinfo.s_staff 的数据：~0 rows (大约)
+-- 导出  表 vinosinfo.s_staff 结构
+CREATE TABLE IF NOT EXISTS `s_staff` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `machine_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '考勤机ID',
+  `staff_code` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '工号',
+  `name` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '姓名',
+  `gender` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '性别:男1女2',
+  `dept_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '部门ID',
+  `position_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '职务ID',
+  `phone` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '电话号码',
+  `mobile` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '手机号码',
+  `birthday` date NOT NULL DEFAULT '1970-01-01' COMMENT '生日',
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '地址',
+  `in_date` date NOT NULL DEFAULT '1970-01-01' COMMENT '入职时间',
+  `out_date` date NOT NULL DEFAULT '1970-01-01' COMMENT '离职时间',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`),
+  KEY `is_enable` (`is_enable`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='人员表';
+
+-- 正在导出表  vinosinfo.s_staff 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `s_staff` DISABLE KEYS */;
 INSERT INTO `s_staff` (`id`, `machine_id`, `staff_code`, `name`, `gender`, `dept_id`, `position_id`, `phone`, `mobile`, `birthday`, `address`, `in_date`, `out_date`, `is_enable`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
 	(1, 1, '10001', '1', 1, 1, 1, '', '', '2017-11-22', '', '2016-03-27', '2017-11-22', 1, '2017-11-22 16:19:33', 'LIUXU', '2017-11-22 16:20:05', 'SYSTEM');
 /*!40000 ALTER TABLE `s_staff` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.s_staff_machine 结构
+CREATE TABLE IF NOT EXISTS `s_staff_machine` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `machine_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '考勤机ID',
+  `machine_code` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '考勤机工号',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`),
+  KEY `is_enable` (`is_enable`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='人员表';
 
 -- 正在导出表  vinosinfo.s_staff_machine 的数据：~6 rows (大约)
 /*!40000 ALTER TABLE `s_staff_machine` DISABLE KEYS */;
@@ -224,19 +443,75 @@ INSERT INTO `s_staff_machine` (`id`, `machine_id`, `machine_code`, `is_enable`, 
 	(6, 7, '10020', 1, '2017-11-22 16:20:05', 'SYSTEM', '2017-11-22 16:20:05', 'SYSTEM');
 /*!40000 ALTER TABLE `s_staff_machine` ENABLE KEYS */;
 
+-- 导出  表 vinosinfo.s_staff_sche 结构
+CREATE TABLE IF NOT EXISTS `s_staff_sche` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `staff_code` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '员工工号',
+  `sche_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '班次ID',
+  `start_date` date NOT NULL DEFAULT '2000-01-01' COMMENT '开始日期',
+  `end_date` date NOT NULL DEFAULT '2000-01-01' COMMENT '结束日期',
+  `start_time` time NOT NULL DEFAULT '00:00:00' COMMENT '上班时间',
+  `end_time` time NOT NULL DEFAULT '00:00:00' COMMENT '下班时间',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='员工班次表';
+
 -- 正在导出表  vinosinfo.s_staff_sche 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `s_staff_sche` DISABLE KEYS */;
 /*!40000 ALTER TABLE `s_staff_sche` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.u_check_in_out 结构
+CREATE TABLE IF NOT EXISTS `u_check_in_out` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `machine_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '员工考勤机id',
+  `check_time` datetime DEFAULT NULL,
+  `check_date` date NOT NULL DEFAULT '2017-11-16' COMMENT '考勤日',
+  `sche` tinyint(3) NOT NULL DEFAULT '1' COMMENT '班次（每日第几次上下班）',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SYSTEM' COMMENT '创建人',
+  PRIMARY KEY (`id`),
+  KEY `check_time` (`check_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='打卡表';
 
 -- 正在导出表  vinosinfo.u_check_in_out 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `u_check_in_out` DISABLE KEYS */;
 /*!40000 ALTER TABLE `u_check_in_out` ENABLE KEYS */;
 
--- 正在导出表  vinosinfo.u_role 的数据：~0 rows (大约)
+-- 导出  表 vinosinfo.u_role 结构
+CREATE TABLE IF NOT EXISTS `u_role` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '角色名称',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='角色表';
+
+-- 正在导出表  vinosinfo.u_role 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `u_role` DISABLE KEYS */;
 INSERT INTO `u_role` (`id`, `role_name`, `is_enable`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
 	(1, '管理员', 1, '2017-11-05 14:41:25', 'LIUXU', '2017-11-08 14:18:26', 'a');
 /*!40000 ALTER TABLE `u_role` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.u_role_privilege 结构
+CREATE TABLE IF NOT EXISTS `u_role_privilege` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '角色表id',
+  `menu_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '菜单表id',
+  `is_enable` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用，0否1是',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
+  `is_delete` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=575 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='角色权限表';
 
 -- 正在导出表  vinosinfo.u_role_privilege 的数据：~574 rows (大约)
 /*!40000 ALTER TABLE `u_role_privilege` DISABLE KEYS */;
@@ -817,7 +1092,23 @@ INSERT INTO `u_role_privilege` (`id`, `role_id`, `menu_id`, `is_enable`, `create
 	(574, 1, 42, 1, '2017-11-22 17:02:24', 'LIUXU', '2017-11-22 17:02:24', 'LIUXU', 0);
 /*!40000 ALTER TABLE `u_role_privilege` ENABLE KEYS */;
 
--- 正在导出表  vinosinfo.u_user 的数据：~0 rows (大约)
+-- 导出  表 vinosinfo.u_user 结构
+CREATE TABLE IF NOT EXISTS `u_user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'auto increment id',
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
+  `role_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '角色id',
+  `username` varchar(48) NOT NULL DEFAULT '' COMMENT '用户名',
+  `password` varchar(128) NOT NULL DEFAULT '' COMMENT '登录密码',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) NOT NULL DEFAULT '' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) NOT NULL DEFAULT '' COMMENT '更新人',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`),
+  KEY `user_name` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+
+-- 正在导出表  vinosinfo.u_user 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `u_user` DISABLE KEYS */;
 INSERT INTO `u_user` (`id`, `user_id`, `role_id`, `username`, `password`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
 	(1, 1, 1, 'LIUXU', '$2y$10$LQuTYCf5O2YRNLQzn7.YkOVBViOgDrQlerMePuOzCfKomWk6mmL5.', '2017-11-03 16:19:51', 'SYSTEM', '2017-11-11 17:28:38', 'SYSTEM');
