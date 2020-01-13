@@ -14,6 +14,8 @@
   ================================================== -->
     <link rel="stylesheet" type="text/css" href="/assets/styles/style.css" />
     <link rel="stylesheet" type="text/css" href="/assets/styles/skitter.styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/assets/styles/inner.css" />
+    <link rel="stylesheet" href="/assets/styles/prettyPhoto.css" media="screen" />
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css' />
   <link href='https://fonts.googleapis.com/css?family=Oswald:700,400' rel='stylesheet' type='text/css' />
@@ -45,12 +47,11 @@
             <section id="navigation">
                 <nav>
                     <ul id="topnav" class="sf-menu">
-                        <li><a href="index.html" class="current">INICIO</a></li>
-                        <li><a href="bodegas.html">BODEGAS</a></li>
-                        <li><a href="vinos.html">VINOS</a></li>
-                        <li><a href="nosotros.html">NOSOTROS</a></li>
-                        <li><a href="servicios.html">SERVICIOS</a></li>
-                        <li><a href="contact.html">CONTACTO</a></li>
+                        <?php foreach($menus as $menu):?>
+                        <?php if($menu['is_show_top'] == 1):?>
+                        <li><a href="<?=$menu['controller']?>" <?=$menu['controller']==$current_menu?'class="current"':''?>><?=$menu['name']?></a></li>
+                        <?php endif?>
+                        <?php endforeach?>
                     </ul><!-- topnav -->
                 </nav><!-- nav -->
             </section>                                

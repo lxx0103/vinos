@@ -74,14 +74,12 @@
         <div id="outerfooter">
         	<div id="footercontainer">
             	<footer id="footer">
-                <ul id="footer-menu">
-                	<li><a href="./index.html">INICIO</a></li>   
-                    <!-- <li><a href="./bodegas.html">BODEGAS</a></li>   
-                    <li><a href="./vinos.html">VINOS</a></li>    -->
-                    <li><a href="./legal.html">AVISO LEGAL</a></li>   
-                    <li><a href="./nosotros.html">NOSOTROS</a></li>   
-                    <li><a href="./servicios.html">SERVICIOS</a></li>   
-                    <li><a href="./contact.html">CONTACTO</a></li>
+                <ul id="footer-menu">                  
+                  <?php foreach($menus as $menu):?>
+                  <?php if($menu['is_show_bottom'] == 1):?>
+                  <li><a href="<?=$menu['controller']?>"><?=strtoupper($menu['name'])?></a></li>
+                  <?php endif?>
+                  <?php endforeach?>
                 </ul>
                 <div id="copyright">VinosInfo - Tu brújula en el mercado chino</div>
                 </footer>
