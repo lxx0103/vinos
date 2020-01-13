@@ -5,134 +5,74 @@
             	<section id="slider">
                 <div class="box_skitter box_skitter_large">
                     <ul>
+                    <?php foreach($slides['type_1'] as $type1):?>                        
                         <li>
-                            <img src="/assets/images/content/slide1.jpg" alt="" />
+                            <img src="<?=$type1['img']?>"/>
                             <div class="label_text">
-                                <span><a href="#" style="color: white;">Descripcion de la bodega。</a></span>
+                                <span><a href="<?=$type1['url']?>" style="color: white;"><?=$type1['desc']?></a></span>
                             </div>
                         </li>
-                        <li>
-                            <img src="/assets/images/content/slide2.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Descripcion de la bodega。</a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/assets/images/content/slide3.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Descripcion de la bodega。</a></span>
-                            </div>
-                        </li>
+                    <?php endforeach?>
                     </ul>
                 </div>
                 <div class="box_skitter box_skitter_large2">
                     <ul>
+                    <?php foreach($slides['type_2'] as $type2):?>                        
                         <li>
-                            <img src="/assets/images/content/slide4.jpg" alt="" />
+                            <img src="<?=$type2['img']?>"/>
                             <div class="label_text">
-                                <span><a href="#" style="color: white;">Descripcion de la bodega。</a></span>
+                                <span><a href="<?=$type2['url']?>" style="color: white;"><?=$type2['desc']?></a></span>
                             </div>
                         </li>
-                        <li>
-                            <img src="/assets/images/content/slide5.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Descripcion de la bodega。</a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/assets/images/content/slide6.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Descripcion de la bodega。</a></span>
-                            </div>
-                        </li>
+                    <?php endforeach?>
                     </ul>
                 </div>
                 <div class="box_skitter box_skitter_large3">
                     <ul>
+                    <?php foreach($slides['type_3'] as $type3):?>                        
                         <li>
-                            <img src="/assets/images/content/slide7.jpg" alt="" />
+                            <img src="<?=$type3['img']?>"/>
                             <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
+                                <span><a href="<?=$type3['url']?>" style="color: white;"><?=$type3['desc']?></a></span>
                             </div>
                         </li>
-                        <li>
-                            <img src="/assets/images/content/slide8.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/assets/images/content/slide9.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
+                    <?php endforeach?>
                     </ul>
                 </div>
                 <div class="box_skitter box_skitter_large4">
                     <ul>
+                    <?php foreach($slides['type_4'] as $type4):?>                        
                         <li>
-                            <img src="/assets/images/content/slide10.jpg" alt="" />
+                            <img src="<?=$type4['img']?>"/>
                             <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
+                                <span><a href="<?=$type4['url']?>" style="color: white;"><?=$type4['desc']?></a></span>
                             </div>
                         </li>
-                        <li>
-                            <img src="/assets/images/content/slide11.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/assets/images/content/slide12.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
+                    <?php endforeach?>
                     </ul>
                 </div>
                 <div class="box_skitter box_skitter_large5">
                     <ul>
+                    <?php foreach($slides['type_5'] as $type5):?>                        
                         <li>
-                            <img src="/assets/images/content/slide13.jpg" alt="" />
+                            <img src="<?=$type5['img']?>"/>
                             <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
+                                <span><a href="<?=$type5['url']?>" style="color: white;"><?=$type5['desc']?></a></span>
                             </div>
                         </li>
-                        <li>
-                            <img src="/assets/images/content/slide14.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/assets/images/content/slide15.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
+                    <?php endforeach?>
                     </ul>
                 </div>
                 <div class="box_skitter box_skitter_large6">
                     <ul>
+                    <?php foreach($slides['type_6'] as $type6):?>                        
                         <li>
-                            <img src="/assets/images/content/slide16.jpg" alt="" />
+                            <img src="<?=$type6['img']?>"/>
                             <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
+                                <span><a href="<?=$type6['url']?>" style="color: white;"><?=$type6['desc']?></a></span>
                             </div>
                         </li>
-                        <li>
-                            <img src="/assets/images/content/slide17.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/assets/images/content/slide18.jpg" alt="" />
-                            <div class="label_text">
-                                <span><a href="#" style="color: white;">Tu vino</a></span>
-                            </div>
-                        </li>
+                    <?php endforeach?>
                     </ul>
                 </div>
                 </section>
@@ -148,32 +88,32 @@
 				<article>
                 	<div class="one_third">
                     	<div class="frame">
-                    	<img src="/assets/images/content/map1.png" alt="" /><h5><a href="./bodegas.html" style="color: black;">Valle del Río Ebro</a></h5>
+                    	<img src="/assets/images/content/map1.png" alt="" /><h5><a href="/bodegas?zone_id=1" style="color: black;">Valle del Río Ebro</a></h5>
                         </div>
                     </div>
                 	<div class="one_third">
                     	<div class="frame">
-                    	<img src="/assets/images/content/map2.png" alt="" /><h5><a href="./bodegas.html" style="color: black;">Meseta Central</a></h5>
+                    	<img src="/assets/images/content/map2.png" alt="" /><h5><a href="/bodegas?zone_id=2" style="color: black;">Meseta Central</a></h5>
                         </div>
                     </div>
                     <div class="one_third lastcols">
                     	<div class="frame">
-                        <img src="/assets/images/content/map3.png" alt="" /><h5><a href="./bodegas.html" style="color: black;">Valle del Río Duero</a></h5>
+                        <img src="/assets/images/content/map3.png" alt="" /><h5><a href="/bodegas?zone_id=3" style="color: black;">Valle del Río Duero</a></h5>
                         </div>
                     </div>
                     <div class="one_third">
                         <div class="frame">
-                        <img src="/assets/images/content/map4.png" alt="" /><h5><a href="./bodegas.html" style="color: black;">Costa Mediterránea</a></h5>
+                        <img src="/assets/images/content/map4.png" alt="" /><h5><a href="/bodegas?zone_id=4" style="color: black;">Costa Mediterránea</a></h5>
                         </div>
                     </div>
                     <div class="one_third">
                         <div class="frame">
-                        <img src="/assets/images/content/map5.png" alt="" /><h5><a href="./bodegas.html" style="color: black;">Noroeste de España</a></h5>
+                        <img src="/assets/images/content/map5.png" alt="" /><h5><a href="/bodegas?zone_id=5" style="color: black;">Noroeste de España</a></h5>
                         </div>
                     </div>
                     <div class="one_third lastcols">
                         <div class="frame">
-                        <img src="/assets/images/content/map6.png" alt="" /><h5><a href="./bodegas.html" style="color: black;">Andalucía</a></h5>
+                        <img src="/assets/images/content/map6.png" alt="" /><h5><a href="/bodegas?zone_id=6" style="color: black;">Andalucía</a></h5>
                         </div>
                     </div>
                 </article>

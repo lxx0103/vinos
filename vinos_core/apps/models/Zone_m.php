@@ -21,7 +21,7 @@ class Zone_m extends CI_Model {
         {
             return array('status' => 1, 'msg' => '成功', 'data' => $zones);
         }
-        return array('status' => 2, 'msg' => '菜单不存在', 'data' => array() );
+        return array('status' => 2, 'msg' => '区域不存在', 'data' => array() );
     }
 
     public function get_one_menu($directory_name, $class_name, $method_name, $is_enable = 1)

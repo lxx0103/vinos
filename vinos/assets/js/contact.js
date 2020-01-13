@@ -31,24 +31,24 @@ jQuery(function() {
       return false;
 	}
 	
-	  var subject = jQuery("input#subject").val();
-	  if (subject == "") {
-      jQuery("input#subject").focus();
+	  var phone = jQuery("input#phone").val();
+	  if (phone == "") {
+      jQuery("input#phone").focus();
       return false;
     }
-	  var msg = jQuery("textarea#msg").val();
-	  if (msg == "Message" || msg == "") {
-	  jQuery("span#msg_error").show();
-	  jQuery("textarea#msg").focus();
+	  var message = jQuery("textarea#message").val();
+	  if (message == "Message" || message == "") {
+	  jQuery("span#message_error").show();
+	  jQuery("textarea#message").focus();
 	  return false;
     }
 		
-		var dataString = 'name='+ name + '&email=' + email + '&subject=' + subject + '&msg=' + msg;
+		var dataString = 'name='+ name + '&email=' + email + '&phone=' + phone + '&message=' + message;
 		//alert (dataString);return false;
 		
 	  jQuery.ajax({
       type: "POST",
-      url: "process.php",
+      url: "/contacto/save",
       data: dataString,
       success: function() {
         jQuery('#contactform').html("<div id='message'></div>");

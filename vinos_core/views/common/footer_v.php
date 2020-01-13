@@ -44,10 +44,10 @@
                         <li class="widget-container">
                             <h2 class="widget-title">&nbsp;</h2>
                             <div id="flickr">
-                                <div class="flickr-img"><img src="images/content/g5.png" alt="" /></div>
-                                <div class="flickr-img last"><img src="images/content/g6.png" alt="" /></div>
-                                <div class="flickr-img"><img src="images/content/g7.png" alt="" /></div>
-                                <div class="flickr-img last"><img src="images/content/g8.png" alt="" /></div>
+                                <div class="flickr-img"><img src="/assets/images/content/g5.png" alt="" /></div>
+                                <div class="flickr-img last"><img src="/assets/images/content/g6.png" alt="" /></div>
+                                <div class="flickr-img"><img src="/assets/images/content/g7.png" alt="" /></div>
+                                <div class="flickr-img last"><img src="/assets/images/content/g8.png" alt="" /></div>
                             </div>
                         </li>
                     </ul>

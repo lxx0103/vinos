@@ -1,6 +1,6 @@
 <?php
 
-class Logout extends CI_Controller
+class Legal extends MY_Controller
 {
 
     public function __construct()
@@ -10,13 +10,7 @@ class Logout extends CI_Controller
 
     public function index()
     {
-        unset($this->session);
-        redirect('auth/login');
+        $this->load->view('legal_v', $this->data);
     }
-
-
-
-
-
 
 }
