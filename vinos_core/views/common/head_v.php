@@ -37,7 +37,7 @@
         <header>
           <section id="top">
                 <div id="logo">
-                    <a href="index.html">后台管理系统</a>
+                     <a href="index.html"><img src="/assets/images/logo.png" alt="" /></a>
                 </div>
                 <ul id="sn">
                     <li><a href="#"><span style="text-decoration:none;font-weight:normal;text-transform:uppercase;color:#999;font-weight: 400; font-family: 'Open Sans', sans-serif;">中文</span></a></li>
