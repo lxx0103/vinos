@@ -55,7 +55,7 @@
             	<div id="footcol4" class="footcol">
                 	<ul>
                     	<li class="widget-container">
-                        	<h2 class="widget-title"><a href="./contact.html">CONTACTO</a></h2>
+                        	<h2 class="widget-title"><a href="/contacto">CONTACTO</a></h2>
                             <ul>
                                 <li style="width: 210px;">Venid a conocernos. Somos la puerta de entrada al mercado chino, el mayor mercado del mundo, con 1.400 millones de potenciales consumidores.</li>
                                 <li>Para obtener más información, póngase en contacto con nosotros.</li>
