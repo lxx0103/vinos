@@ -7,6 +7,8 @@ class Index extends MY_Controller
     {
         parent::__construct();
         $this->load->model('Slide_m');
+        $this->load->model('Map_m');
+        $this->load->model('Zone_m');
     }
 
     public function index()
@@ -31,7 +33,17 @@ class Index extends MY_Controller
     		elseif($row['type'] == 6){
     			$this->data['slides']['type_6'][] = $row;
     		}
-    	}
+    	}        
+        $maps = $this->Map_m->get_all_map();
+        $this->data['maps'] = $maps['data'];
+        $zones = $this->Zone_m->get_all_zone();
+        $sorted_zones = array();
+        foreach ($zones['data'] as $row) 
+        {
+            $sorted_zones[$row['id']] = $row;
+        }
+        $this->data['zones'] = $zones['data'];
+        $this->data['sorted_zones'] = $sorted_zones;
         $this->load->view('index_v', $this->data);
     }
 

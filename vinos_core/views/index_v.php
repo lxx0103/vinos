@@ -85,37 +85,14 @@
         	<div id="maincontent">
         	<section id="mainthecontent">
             
-				<article>
-                	<div class="one_third">
-                    	<div class="frame">
-                    	<img src="/assets/images/content/map1.png" alt="" /><h5><a href="/bodegas?zone_id=1" style="color: black;">Valle del Río Ebro</a></h5>
+				<article>                    
+                    <?php foreach($maps as $map):?>                      
+                        <div class="one_third <?=$map['id']==3?'lastcols':''?><?=$map['id']==6?'lastcols':''?>">
+                            <div class="frame">
+                            <img src="<?=$map['img']?>" alt="" /><h5><a href="/bodegas?zone_id=<?=$map['zone_id']?>" style="color: black;"><?=$sorted_zones[$map['zone_id']]['name']?></a></h5>
+                            </div>
                         </div>
-                    </div>
-                	<div class="one_third">
-                    	<div class="frame">
-                    	<img src="/assets/images/content/map2.png" alt="" /><h5><a href="/bodegas?zone_id=2" style="color: black;">Meseta Central</a></h5>
-                        </div>
-                    </div>
-                    <div class="one_third lastcols">
-                    	<div class="frame">
-                        <img src="/assets/images/content/map3.png" alt="" /><h5><a href="/bodegas?zone_id=3" style="color: black;">Valle del Río Duero</a></h5>
-                        </div>
-                    </div>
-                    <div class="one_third">
-                        <div class="frame">
-                        <img src="/assets/images/content/map4.png" alt="" /><h5><a href="/bodegas?zone_id=4" style="color: black;">Costa Mediterránea</a></h5>
-                        </div>
-                    </div>
-                    <div class="one_third">
-                        <div class="frame">
-                        <img src="/assets/images/content/map5.png" alt="" /><h5><a href="/bodegas?zone_id=5" style="color: black;">Noroeste de España</a></h5>
-                        </div>
-                    </div>
-                    <div class="one_third lastcols">
-                        <div class="frame">
-                        <img src="/assets/images/content/map6.png" alt="" /><h5><a href="/bodegas?zone_id=6" style="color: black;">Andalucía</a></h5>
-                        </div>
-                    </div>
+                    <?php endforeach?>
                 </article>
          
                 <div class="clear"></div>
