@@ -54,4 +54,11 @@ class Slide_m extends CI_Model {
         $query = $this->db->query($str);
         return array('status' => 1, 'msg' => '成功！', 'data' => $this->db->affected_rows());
     }
+
+    public function del($id)
+    {        
+        $this->db->where('id', $id);
+        $this->db->delete('f_slide'); 
+        return array('status' => 1, 'msg' => '成功！', 'data' => $this->db->affected_rows());
+    }
 }

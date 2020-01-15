@@ -27,6 +27,7 @@
                                     <td class="center"><?=$row['update_user']?></td>
                                     <td class="center">
                                         <button class="btn btn-warning edit_zone" value="<?=$row['id']?>">编辑</button>
+                                        <button class="btn btn-danger delete_zone" value="<?=$row['id']?>">删除</button>
                                     </td>
                                 </tr>
                                 <?php endforeach?>
@@ -45,7 +46,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="dept_edit_form" tabindex="-1" role="dialog" style="top: 30%; display: none;">
+<div class="modal fade" id="zone_edit_form" tabindex="-1" role="dialog" style="top: 30%; display: none;">
     <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
             <h5></h5>
@@ -78,7 +79,7 @@
                 </div>
                 <input type="hidden" name="id" id="id" value="">
                 <div class="form-actions">
-                    <a class="btn btn-success" id="save_dept" style="float: right;">保存</a>
+                    <a class="btn btn-success" id="save_zone" style="float: right;">保存</a>
                 </div>
             </form>
         </div>
@@ -88,12 +89,12 @@
 
 <script>
 $('.add_zone').on('click', function(){
-    $('#dept_edit_form').find('h5').text('新增');
-    $('#dept_edit_form').find('#id').val(0);
-    $('#dept_edit_form').find('#name').val('');
-    $('#dept_edit_form').find('#row').val('');
-    $('#dept_edit_form').find('#is_show').val(1);
-    $('#dept_edit_form').modal('show');
+    $('#zone_edit_form').find('h5').text('新增');
+    $('#zone_edit_form').find('#id').val(0);
+    $('#zone_edit_form').find('#name').val('');
+    $('#zone_edit_form').find('#row').val('');
+    $('#zone_edit_form').find('#is_show').val(1);
+    $('#zone_edit_form').modal('show');
 })
 $('.edit_zone').on('click', function(){
     var id = $(this).val();
@@ -104,19 +105,39 @@ $('.edit_zone').on('click', function(){
         type: 'POST',
         success: function(result){
             if(result.status == 1){
-                $('#dept_edit_form').find('h5').text('修改');
-                $('#dept_edit_form').find('#id').val(result.data.id);
-                $('#dept_edit_form').find('#name').val(result.data.name);
-                $('#dept_edit_form').find('#row').val(result.data.row);
-                $('#dept_edit_form').find('#is_show').val(result.data.is_show);
-                $('#dept_edit_form').modal('show');
+                $('#zone_edit_form').find('h5').text('修改');
+                $('#zone_edit_form').find('#id').val(result.data.id);
+                $('#zone_edit_form').find('#name').val(result.data.name);
+                $('#zone_edit_form').find('#row').val(result.data.row);
+                $('#zone_edit_form').find('#is_show').val(result.data.is_show);
+                $('#zone_edit_form').modal('show');
             }else{
                 layer.alert(result.msg);
             }
         }
     });
 })
-$('#save_dept').on('click', function(){
+$('.delete_zone').on('click', function(){
+    var id = $(this).val();
+    layer.confirm('确定要删除？不可恢复！', function(){    
+        $.ajax({ 
+            url: "/admin/zone/del",
+            data: {"id":id},
+            dataType: 'json',
+            type: 'POST',
+            success: function(result){
+                if(result.status == 1){
+                    layer.alert(result.msg, function(){
+                        window.location.reload();
+                    });                    
+                }else{
+                    layer.alert(result.msg);
+                }
+            }
+        });
+    });
+})
+$('#save_zone').on('click', function(){
     $.ajax({ 
         url: "/admin/zone/save",
         data: {"name":$("#name").val(), "row":$("#row").val(), "is_show":$("#is_show").val(), "id":$("#id").val()},

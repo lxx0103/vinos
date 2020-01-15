@@ -37,8 +37,11 @@ class Slide extends MY_Controller
     }
 
 
-
-
-
+    public function del()
+    {
+        $id = trim($this->input->post('id'));
+        $slide = $this->Slide_m->del($id);
+        echo json_encode($slide);
+    }
 
 }

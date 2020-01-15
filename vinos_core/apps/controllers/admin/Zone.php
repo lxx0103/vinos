@@ -35,6 +35,14 @@ class Zone extends MY_Controller
     }
 
 
+    public function del()
+    {
+        $id = trim($this->input->post('id'));
+        $zone = $this->Zone_m->del($id);
+        echo json_encode($zone);
+    }
+
+
 
 
 

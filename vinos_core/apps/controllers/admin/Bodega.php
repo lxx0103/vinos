@@ -47,6 +47,13 @@ class Bodega extends MY_Controller
         echo json_encode($save);
     }
 
+    public function del()
+    {
+        $id = trim($this->input->post('id'));
+        $bodega = $this->Bodega_m->del($id);
+        echo json_encode($bodega);
+    }
+
 
 
 

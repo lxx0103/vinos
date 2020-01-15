@@ -35,6 +35,12 @@ class Type extends MY_Controller
     }
 
 
+    public function del()
+    {
+        $id = trim($this->input->post('id'));
+        $type = $this->Type_m->del($id);
+        echo json_encode($type);
+    }
 
 
 

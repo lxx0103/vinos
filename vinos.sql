@@ -40,11 +40,11 @@ CREATE TABLE IF NOT EXISTS `f_bodega` (
   `desc` varchar(48) NOT NULL DEFAULT '',
   `is_show` tinyint(4) NOT NULL DEFAULT '0',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `create_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `create_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `update_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  `update_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='前端酒庄';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='前端酒庄';
 
 -- 正在导出表  vinosinfo.f_bodega 的数据：~12 rows (大约)
 /*!40000 ALTER TABLE `f_bodega` DISABLE KEYS */;
@@ -84,6 +84,29 @@ INSERT INTO `f_contact` (`id`, `name`, `phone`, `email`, `message`, `create_time
 	(2, '123412341234', '1234', 'lxx0103@yahoo.com', '1234', '2020-01-14 01:46:10', 'Lewis', '2020-01-14 01:46:10', 'Lewis'),
 	(3, '????', '????', 'lxx0103@yahoo.com', '????', '2020-01-15 04:37:20', 'Lewis', '2020-01-15 04:37:20', 'Lewis');
 /*!40000 ALTER TABLE `f_contact` ENABLE KEYS */;
+
+-- 导出  表 vinosinfo.f_map 结构
+CREATE TABLE IF NOT EXISTS `f_map` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `zone_id` tinyint(4) NOT NULL DEFAULT '0',
+  `img` varchar(255) NOT NULL DEFAULT '',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '创建人',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `update_user` varchar(48) NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- 正在导出表  vinosinfo.f_map 的数据：~0 rows (大约)
+/*!40000 ALTER TABLE `f_map` DISABLE KEYS */;
+INSERT INTO `f_map` (`id`, `zone_id`, `img`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
+	(1, 1, '/uploads/1579105123.png', '2020-01-16 00:07:57', 'Lewis', '2020-01-16 00:18:44', 'lewis'),
+	(2, 2, '/uploads/1579104562.png', '2020-01-16 00:07:59', 'Lewis', '2020-01-16 00:09:23', 'lewis'),
+	(3, 3, '/uploads/1579104572.png', '2020-01-16 00:08:01', 'Lewis', '2020-01-16 00:09:33', 'lewis'),
+	(4, 4, '/uploads/1579104579.png', '2020-01-16 00:08:03', 'Lewis', '2020-01-16 00:09:40', 'lewis'),
+	(5, 5, '/uploads/1579104587.png', '2020-01-16 00:08:06', 'Lewis', '2020-01-16 00:09:48', 'lewis'),
+	(6, 6, '/uploads/1579104594.png', '2020-01-16 00:08:09', 'Lewis', '2020-01-16 00:09:55', 'lewis');
+/*!40000 ALTER TABLE `f_map` ENABLE KEYS */;
 
 -- 导出  表 vinosinfo.f_menu 结构
 CREATE TABLE IF NOT EXISTS `f_menu` (
@@ -129,10 +152,9 @@ CREATE TABLE IF NOT EXISTS `f_slide` (
 -- 正在导出表  vinosinfo.f_slide 的数据：~24 rows (大约)
 /*!40000 ALTER TABLE `f_slide` DISABLE KEYS */;
 INSERT INTO `f_slide` (`id`, `type`, `img`, `url`, `desc`, `is_show`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-	(1, 1, '/assets/images/content/slide1.jpg', '', 'Descripcion de la bodega', 1, '2020-01-11 20:33:05', 'Lewis', '2020-01-14 02:04:31', 'Lewis'),
+	(1, 1, '/assets/images/content/slide1.jpg', 'www.google.com', 'Descripcion de la bodega', 1, '2020-01-11 20:33:05', 'Lewis', '2020-01-15 23:44:12', 'Lewis'),
 	(2, 1, '/assets/images/content/slide2.jpg', '', 'Descripcion de la bodega', 1, '2020-01-11 20:33:17', 'Lewis', '2020-01-14 02:04:43', 'Lewis'),
 	(3, 1, '/assets/images/content/slide3.jpg', '', 'Descripcion de la bodega', 1, '2020-01-11 20:33:26', 'Lewis', '2020-01-14 02:04:46', 'Lewis'),
-	(4, 1, '/assets/images/content/slide1.jpg', '', 'Descripcion de la bodega', 0, '2020-01-11 20:33:30', 'Lewis', '2020-01-14 02:04:31', 'Lewis'),
 	(5, 2, '/assets/images/content/slide1.jpg', '', 'Descripcion de la bodega', 1, '2020-01-11 20:33:38', 'Lewis', '2020-01-14 02:04:31', 'Lewis'),
 	(6, 2, '/assets/images/content/slide1.jpg', '', 'Descripcion de la bodega', 1, '2020-01-11 20:33:41', 'Lewis', '2020-01-14 02:04:31', 'Lewis'),
 	(7, 2, '/assets/images/content/slide1.jpg', '', 'Descripcion de la bodega', 1, '2020-01-11 20:33:43', 'Lewis', '2020-01-14 02:04:31', 'Lewis'),
@@ -166,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `f_type` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `update_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='红酒类型';
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='红酒类型';
 
 -- 正在导出表  vinosinfo.f_type 的数据：~20 rows (大约)
 /*!40000 ALTER TABLE `f_type` DISABLE KEYS */;
@@ -190,7 +212,7 @@ INSERT INTO `f_type` (`id`, `name`, `is_show`, `row`, `create_time`, `create_use
 	(17, 'Espumoso', 1, 4, '2020-01-14 00:10:03', 'Lewis', '2020-01-14 00:11:42', 'Lewis'),
 	(18, 'Cava', 1, 4, '2020-01-14 00:10:03', 'Lewis', '2020-01-14 00:11:42', 'Lewis'),
 	(19, 'Cava Reserva', 1, 4, '2020-01-14 00:10:03', 'Lewis', '2020-01-14 00:11:42', 'Lewis'),
-	(20, 'Cava Gran Reserva', 1, 4, '2020-01-14 00:10:03', 'Lewis', '2020-01-14 00:11:42', 'Lewis');
+	(21, 'Cava Gran Reserva', 1, 4, '2020-01-16 00:33:21', 'lewis', '2020-01-16 00:33:21', 'lewis');
 /*!40000 ALTER TABLE `f_type` ENABLE KEYS */;
 
 -- 导出  表 vinosinfo.f_vino 结构
@@ -237,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `f_zone` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `update_user` varchar(48) CHARACTER SET latin1 NOT NULL DEFAULT 'Lewis' COMMENT '更新人',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='酒庄地区';
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='酒庄地区';
 
 -- 正在导出表  vinosinfo.f_zone 的数据：~17 rows (大约)
 /*!40000 ALTER TABLE `f_zone` DISABLE KEYS */;
@@ -261,7 +283,7 @@ INSERT INTO `f_zone` (`id`, `name`, `is_show`, `row`, `create_time`, `create_use
 	(17, 'Alicante', 1, 2, '2020-01-13 13:20:39', 'Lewis', '2020-01-13 13:21:27', 'Lewis'),
 	(18, 'Murcia', 1, 2, '2020-01-13 13:20:48', 'Lewis', '2020-01-13 13:21:26', 'Lewis'),
 	(19, 'Galicia', 1, 2, '2020-01-13 13:20:57', 'Lewis', '2020-01-13 13:21:25', 'Lewis'),
-	(20, 'Cádiz', 1, 2, '2020-01-13 13:21:06', 'Lewis', '2020-01-13 13:21:24', 'Lewis');
+	(21, 'Cádiz', 1, 2, '2020-01-16 00:36:44', 'lewis', '2020-01-16 00:36:56', 'lewis');
 /*!40000 ALTER TABLE `f_zone` ENABLE KEYS */;
 
 -- 导出  表 vinosinfo.s_menu 结构
@@ -281,34 +303,24 @@ CREATE TABLE IF NOT EXISTS `s_menu` (
   `update_user` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '更新人',
   PRIMARY KEY (`id`),
   KEY `is_enable` (`is_enable`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='菜单表';
 
--- 正在导出表  vinosinfo.s_menu 的数据：~23 rows (大约)
+-- 正在导出表  vinosinfo.s_menu 的数据：~13 rows (大约)
 /*!40000 ALTER TABLE `s_menu` DISABLE KEYS */;
 INSERT INTO `s_menu` (`id`, `name`, `dir`, `controller`, `method`, `is_enable`, `parent_id`, `need_privilege`, `is_hidden`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
 	(1, '我的主页', 'admin', 'home', '', 1, 0, 1, 0, '2017-11-04 16:43:15', 'LIUXU', '2020-01-14 03:31:25', 'LIUXU'),
-	(2, '菜单未设置', '', 'home', 'menu', 1, 1, 0, 1, '2017-11-04 17:08:48', 'LIUXU', '2017-11-05 17:25:28', 'LIUXU'),
-	(3, '没有权限', '', 'home', 'privilege', 1, 1, 0, 1, '2017-11-04 17:08:48', 'LIUXU', '2017-11-05 17:25:29', 'LIUXU'),
-	(4, '404页面', '', 'home', 'exists', 1, 1, 0, 1, '2017-11-04 17:08:48', 'LIUXU', '2017-11-05 17:25:31', 'LIUXU'),
 	(5, '权限管理', '', '', '', 1, 0, 1, 0, '2017-11-04 17:08:48', 'LIUXU', '2017-11-05 17:35:31', 'LIUXU'),
 	(9, '菜单管理', 'admin', 'menu', '', 1, 5, 1, 0, '2017-11-04 17:08:48', 'LIUXU', '2020-01-14 03:37:45', 'LIUXU'),
-	(10, '获取菜单详情', 'admin', 'menu', 'one', 1, 5, 1, 1, '2017-11-04 17:08:48', 'LIUXU', '2020-01-14 03:42:04', 'LIUXU'),
-	(11, '修改菜单', 'admin', 'menu', 'save', 1, 5, 1, 1, '2017-11-08 15:07:16', '', '2020-01-14 03:42:05', 'LIUXU'),
 	(14, '数据录入', '', '', '', 1, 0, 1, 0, '2017-11-11 17:06:58', 'a', '2020-01-14 03:42:46', 'lewis'),
 	(15, '地区列表', 'admin', 'zone', '', 1, 14, 1, 0, '2017-11-11 17:26:59', 'a', '2020-01-15 01:12:40', 'lewis'),
-	(16, '获取地区详情', 'admin', 'zone', 'one', 1, 14, 1, 1, '2017-11-14 17:15:49', 'LIUXU', '2020-01-15 01:13:32', 'lewis'),
-	(17, '修改地区', 'admin', 'zone', 'save', 1, 14, 1, 1, '2017-11-14 17:16:31', 'LIUXU', '2020-01-15 01:13:46', 'lewis'),
 	(18, '酒庄列表', 'admin', 'bodega', '', 1, 14, 1, 0, '2017-11-14 17:22:57', 'LIUXU', '2020-01-15 03:09:02', 'lewis'),
-	(19, '获取酒庄详情', 'admin', 'bodega', 'one', 1, 14, 1, 1, '2017-11-14 17:23:24', 'LIUXU', '2020-01-15 04:18:25', 'lewis'),
-	(20, '修改酒庄', 'admin', 'bodega', 'save', 1, 14, 1, 1, '2017-11-14 17:23:52', 'LIUXU', '2020-01-15 04:18:35', 'lewis'),
 	(21, '红酒类型列表', 'admin', 'type', '', 1, 14, 1, 0, '2017-11-15 20:31:11', 'LIUXU', '2020-01-15 04:21:45', 'lewis'),
-	(22, '获取类型详情', 'admin', 'type', 'one', 1, 14, 1, 1, '2017-11-15 20:31:50', 'LIUXU', '2020-01-15 04:21:46', 'lewis'),
-	(23, '修改类型', 'admin', 'type', 'save', 1, 14, 1, 1, '2017-11-15 20:32:13', 'LIUXU', '2020-01-15 04:21:47', 'lewis'),
 	(24, '留言管理', '', '', '', 1, 0, 1, 0, '2017-11-19 15:36:11', 'LIUXU', '2020-01-15 04:30:23', 'lewis'),
 	(28, '红酒列表', 'admin', 'vino', '', 1, 14, 1, 0, '2017-11-19 16:11:42', 'LIUXU', '2020-01-15 04:23:45', 'lewis'),
-	(29, '获取红酒详情', 'admin', 'vino', 'one', 1, 14, 1, 1, '2017-11-19 16:12:18', 'LIUXU', '2020-01-15 04:24:07', 'lewis'),
-	(30, '修改红酒', 'admin', 'vino', 'save', 1, 14, 1, 1, '2017-11-19 16:12:46', 'LIUXU', '2020-01-15 04:24:22', 'lewis'),
-	(31, '留言列表', 'admin', 'contact', '', 1, 24, 1, 0, '2017-11-19 17:10:25', 'LIUXU', '2020-01-15 04:36:34', 'lewis');
+	(31, '留言列表', 'admin', 'contact', '', 1, 24, 1, 0, '2017-11-19 17:10:25', 'LIUXU', '2020-01-15 04:36:34', 'lewis'),
+	(32, '图片管理', '', '', '', 1, 0, 1, 0, '2020-01-15 23:29:31', 'lewis', '2020-01-15 23:29:31', 'lewis'),
+	(33, '轮播图列表', 'admin', 'slide', '', 1, 32, 1, 0, '2020-01-15 23:29:56', 'lewis', '2020-01-15 23:29:56', 'lewis'),
+	(34, '地图列表', 'admin', 'map', '', 1, 32, 1, 0, '2020-01-15 23:56:24', 'lewis', '2020-01-15 23:56:24', 'lewis');
 /*!40000 ALTER TABLE `s_menu` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

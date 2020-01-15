@@ -33,6 +33,7 @@
                                     <td class="center"><?=$row['update_user']?></td>
                                     <td class="center">
                                         <button class="btn btn-warning edit_bodega" value="<?=$row['id']?>">编辑</button>
+                                        <button class="btn btn-danger delete_bodega" value="<?=$row['id']?>">删除</button>
                                     </td>
                                 </tr>
                                 <?php endforeach?>
@@ -151,6 +152,26 @@ $('.edit_bodega').on('click', function(){
                 layer.alert(result.msg);
             }
         }
+    });
+})
+$('.delete_bodega').on('click', function(){
+    var id = $(this).val();
+    layer.confirm('确定要删除？不可恢复！', function(){    
+        $.ajax({ 
+            url: "/admin/bodega/del",
+            data: {"id":id},
+            dataType: 'json',
+            type: 'POST',
+            success: function(result){
+                if(result.status == 1){
+                    layer.alert(result.msg, function(){
+                        window.location.reload();
+                    });                    
+                }else{
+                    layer.alert(result.msg);
+                }
+            }
+        });
     });
 })
 $('#save_bodega').on('click', function(){

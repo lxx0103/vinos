@@ -31,11 +31,12 @@
                                     <td class="center"><?=$row['update_user']?></td>
                                     <td class="center">
                                         <button class="btn btn-warning edit_slide" value="<?=$row['id']?>">编辑</button>
+                                        <button class="btn btn-danger delete_slide" value="<?=$row['id']?>">删除</button>
                                     </td>
                                 </tr>
                                 <?php endforeach?>
                                 <tr>
-                                    <td class="center" colspan="9"></td>
+                                    <td class="center" colspan="8"></td>
                                     <td class="center">
                                         <button class="btn btn-success add_slide">新增</button>
                                     </td>
@@ -144,6 +145,26 @@ $('.edit_slide').on('click', function(){
                 layer.alert(result.msg);
             }
         }
+    });
+})
+$('.delete_slide').on('click', function(){
+    var id = $(this).val();
+    layer.confirm('确定要删除？不可恢复！', function(){    
+        $.ajax({ 
+            url: "/admin/slide/del",
+            data: {"id":id},
+            dataType: 'json',
+            type: 'POST',
+            success: function(result){
+                if(result.status == 1){
+                    layer.alert(result.msg, function(){
+                        window.location.reload();
+                    });                    
+                }else{
+                    layer.alert(result.msg);
+                }
+            }
+        });
     });
 })
 $('#save_slide').on('click', function(){

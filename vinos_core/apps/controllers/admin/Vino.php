@@ -49,6 +49,13 @@ class Vino extends MY_Controller
 
 
 
+    public function del()
+    {
+        $id = trim($this->input->post('id'));
+        $vino = $this->Vino_m->del($id);
+        echo json_encode($vino);
+    }
+
 
 
 

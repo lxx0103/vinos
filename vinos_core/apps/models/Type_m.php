@@ -51,4 +51,11 @@ class Type_m extends CI_Model {
         $query = $this->db->query($str);
         return array('status' => 1, 'msg' => '成功！', 'data' => $this->db->affected_rows());
     }
+
+    public function del($id)
+    {        
+        $this->db->where('id', $id);
+        $this->db->delete('f_type'); 
+        return array('status' => 1, 'msg' => '成功！', 'data' => $this->db->affected_rows());
+    }
 }

@@ -27,6 +27,7 @@
                                     <td class="center"><?=$row['update_user']?></td>
                                     <td class="center">
                                         <button class="btn btn-warning edit_type" value="<?=$row['id']?>">编辑</button>
+                                        <button class="btn btn-danger delete_type" value="<?=$row['id']?>">删除</button>
                                     </td>
                                 </tr>
                                 <?php endforeach?>
@@ -64,6 +65,8 @@
                         <select name="row" id="row" class="form-control">
                             <option value="1">1</option>
                             <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </div>
                 </div>
@@ -78,7 +81,7 @@
                 </div>
                 <input type="hidden" name="id" id="id" value="">
                 <div class="form-actions">
-                    <a class="btn btn-success" id="save_dept" style="float: right;">保存</a>
+                    <a class="btn btn-success" id="save_type" style="float: right;">保存</a>
                 </div>
             </form>
         </div>
@@ -116,7 +119,28 @@ $('.edit_type').on('click', function(){
         }
     });
 })
-$('#save_dept').on('click', function(){
+
+$('.delete_type').on('click', function(){
+    var id = $(this).val();
+    layer.confirm('确定要删除？不可恢复！', function(){    
+        $.ajax({ 
+            url: "/admin/type/del",
+            data: {"id":id},
+            dataType: 'json',
+            type: 'POST',
+            success: function(result){
+                if(result.status == 1){
+                    layer.alert(result.msg, function(){
+                        window.location.reload();
+                    });                    
+                }else{
+                    layer.alert(result.msg);
+                }
+            }
+        });
+    });
+})
+$('#save_type').on('click', function(){
     $.ajax({ 
         url: "/admin/type/save",
         data: {"name":$("#name").val(), "row":$("#row").val(), "is_show":$("#is_show").val(), "id":$("#id").val()},
