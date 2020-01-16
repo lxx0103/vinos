@@ -26,7 +26,7 @@
                         <h4>DATOS GENERALES</h4>
                         <div style="margin-bottom: 30px;">En cumplimiento del deber de información estipulado en el artículo 10 de la Ley 34/2002 de 11 de julio de Servicios de la Sociedad de la Información y de Comercio Electrónico, Dongteng Wang y en calidad de titular del web site www.vinosinfo.com, procede a comunicarles los datos identificativos exigidos por la referida norma:<br />
                         Dongteng Wang<br />
-                        C/Octavio Paz, 2 P34 28909 Getafe Madrid<br />
+                        C/Toreno, 18 28947 Fuenlabrada Madrid<br />
                         NIE: X9519068<br />
                         Dirección de correo electrónico: info@vinosinfo.com<br />
                         La presente información conforma y regula las condiciones de uso, las limitaciones de responsabilidad y las obligaciones que, los usuarios de la página Web que se publica bajo el nombre de dominio www.vinosinfo.com, asumen y se comprometen a respetar.<br />
@@ -34,7 +34,7 @@
                         <h4>POLÍTICA DE PRIVACIDAD</h4>
                         <div style="margin-bottom: 30px;">En cumplimiento de lo dispuesto en la Ley Orgánica 15/1999, de 13 de Diciembre, de Protección de Datos de Carácter Personal (LOPD) se informa al usuario que todos los datos que nos proporcione serán incorporados a un fichero, creado y mantenido bajo la responsabilidad de Dongteng Wang<br />
                         Siempre se va a respetar la confidencialidad de sus datos personales que sólo serán utilizados con la finalidad de gestionar los servicios ofrecidos, atender a las solicitudes que nos plantee, realizar tareas administrativas, así como remitir información técnica, comercial o publicitaria por vía ordinaria o electrónica.<br />
-                        Para ejercer sus derechos de oposición, rectificación o cancelación deberá dirigirse a la sede de la web (C/Octavio Paz, 2 P34 28909 Getafe Madrid), escribirnos al siguiente correo (info@vinosinfo.com) o llámanos al (910415198).</div>
+                        Para ejercer sus derechos de oposición, rectificación o cancelación deberá dirigirse a la sede de la web (C/Toreno, 18 28947 Fuenlabrada Madrid), escribirnos al siguiente correo (info@vinosinfo.com) o llámanos al (910415198).</div>
 
                         <h4>CONDICIONES DE USO</h4>
                         <div style="margin-bottom: 30px;">Las condiciones de acceso y uso del presente sitio web se rigen por la legalidad vigente y por el principio de buena fe comprometiéndose el usuario a realizar un buen uso de la web. No se permiten conductas que vayan contra la ley, los derechos o intereses de terceros.<br />
