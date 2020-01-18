@@ -205,6 +205,15 @@ jQuery(document).ready(function(){
     });
 
 });
+setInterval(resetimg,300);
+function resetimg(){
+    $('.box_skitter_large').find('img').css('width', '500px');
+    $('.box_skitter_large2').find('img').css('width', '500px');
+    $('.box_skitter_large3').find('img').css('width', '250px');
+    $('.box_skitter_large4').find('img').css('width', '250px');
+    $('.box_skitter_large5').find('img').css('width', '250px');
+    $('.box_skitter_large6').find('img').css('width', '250px');
+}
 </script>
 
 </body>
